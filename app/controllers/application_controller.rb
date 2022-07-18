@@ -3,7 +3,14 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/" do
-    { message: "Good luck with your project!" }.to_json
+    { message: "Welcome to my project!" }.to_json
   end
+
+  get '/todos' do 
+    toDoList = Todos.all
+    toDoList.to_json
+  end
+
+  
 
 end
