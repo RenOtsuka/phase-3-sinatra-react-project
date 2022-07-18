@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
     toDoItem = Todos.create(
       task: params[:task],
       category_id: params[:category_id],
-      completion: params[:completion]
+      completion: params[:completed]
     )
     toDoItem.to_json
   end
@@ -26,6 +26,12 @@ class ApplicationController < Sinatra::Base
     toDoItem.to_json
   end
 
-  
+  patch '/todos/:id' do 
+    toDoItem = Todos.find(params[:id])
+    toDoItem.update(
+      task: params[:task],
+      completion: params[:completed]
+    )
+  end
 
 end
