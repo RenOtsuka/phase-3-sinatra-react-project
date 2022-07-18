@@ -11,6 +11,14 @@ class ApplicationController < Sinatra::Base
     toDoList.to_json
   end
 
-  
+  post '/todos' do 
+    toDoItem = Todos.create(
+      task: params[:task],
+      category_id: params[:category_id],
+      completion: params[:completion]
+    )
+    toDoItem.to_json
+  end
+
 
 end
