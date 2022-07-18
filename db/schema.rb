@@ -12,14 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2022_07_15_160244) do
 
-  create_table "categorys", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "name"
   end
 
   create_table "todos", force: :cascade do |t|
     t.string "task"
-    t.integer "category_id"
+    t.string "category_name"
     t.boolean "completed"
+    t.integer "category_id"
   end
 
 end
