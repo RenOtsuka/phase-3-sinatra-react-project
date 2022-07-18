@@ -20,5 +20,12 @@ class ApplicationController < Sinatra::Base
     toDoItem.to_json
   end
 
+  delete '/todos/:id' do 
+    toDoItem = Todos.find(params[:id])
+    toDoItem.destroy
+    toDoItem.to_json
+  end
+
+  
 
 end
