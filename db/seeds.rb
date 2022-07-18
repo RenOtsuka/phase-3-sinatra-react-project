@@ -1,19 +1,19 @@
 puts "🌱 Seeding spices..."
 
 # Seed your database here
-Categorys.create(name: "Food")
-Categorys.create(name: "Tech")
-Categorys.create(name: "Misc")
+Category.create(name: "Food")
+Category.create(name: "Tech")
+Category.create(name: "Misc")
 
 
-Todos.create(task: "Buy Milk", category_id: 1, completed: false)
-Todos.create(task: "Buy Cheese", category_id: 1, completed: true)
+Todos.create(task: "Buy Milk", category_name: "Food", completed: false, category_id: 1)
+Todos.create(task: "Buy Cheese", category_name: "Food", completed: true, category_id: 1)
 
-Todos.create(task: "Upgrade Internet", category_id: 2, completed: true)
-Todos.create(task: "Buy RAM", category_id: 2, completed: false)
+Todos.create(task: "Upgrade Internet", category_name: "Tech", completed: true, category_id: 2)
+Todos.create(task: "Buy RAM", category_name:  "Tech", completed: false, category_id: 2)
 
-Todos.create(task: "Do Taxes", category_id: 3, completed: false)
-Todos.create(task: "Walk the Dog", category_id: 3, completed: false)
+Todos.create(task: "Do Taxes", category_name: "Misc",  completed: false, category_id: 3)
+Todos.create(task: "Walk the Dog", category_name: "Misc", completed: false, category_id: 3)
 
 
 puts "✅ Done seeding!"
