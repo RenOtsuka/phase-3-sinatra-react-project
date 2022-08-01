@@ -1,5 +1,6 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
+  require 'pry'
   
   # Add your routes here
   get "/" do
@@ -7,15 +8,19 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/todos' do 
-    toDoList = Todos.all
-    toDoList.to_json
+    Todos.display_with_category
   end
+
+  # get '/todos/:id' do 
+  #   todo = Todos.find(params[:id])
+  #   todo.display_with_category
+
+  # end
 
   post '/todos' do 
     toDoItem = Todos.create(
       task: params[:task],
-      category_id: params[:category_id],
-      completion: params[:completed]
+      category_id: params[:category_id]
     )
     toDoItem.to_json
   end
@@ -28,10 +33,21 @@ class ApplicationController < Sinatra::Base
 
   patch '/todos/:id' do 
     toDoItem = Todos.find(params[:id])
+    # binding.pry
     toDoItem.update(
-      task: params[:task],
-      completion: params[:completed]
+      task: params[:task]
     )
+    toDoItem.to_json
+  end
+
+  get '/categories' do 
+    categories = Category.all
+    categories.to_json
+  end
+
+  post '/categories' do 
+    category_item = Category.create(name: params[:name])
+    category_item.to_json
   end
 
 end
