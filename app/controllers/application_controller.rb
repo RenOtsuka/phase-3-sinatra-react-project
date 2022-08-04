@@ -35,7 +35,8 @@ class ApplicationController < Sinatra::Base
     toDoItem = Todos.find(params[:id])
     # binding.pry
     toDoItem.update(
-      task: params[:task]
+      task: params[:task],
+      category_id: params[:category_id]
     )
     toDoItem.to_json
   end
