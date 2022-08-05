@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
       task: params[:task],
       category_id: params[:category_id]
     )
-    toDoItem.to_json
+    toDoItem.to_json(include: :category)
   end
 
   delete '/todos/:id' do 
@@ -38,7 +38,7 @@ class ApplicationController < Sinatra::Base
       task: params[:task],
       category_id: params[:category_id]
     )
-    toDoItem.to_json
+    toDoItem.to_json(include: :category)
   end
 
   get '/categories' do 
