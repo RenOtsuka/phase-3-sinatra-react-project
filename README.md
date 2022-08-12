@@ -10,6 +10,10 @@ This repository sets up the database for a To-do list app, where the categories 
 
 There is full CRUD capability on the To-do list model, while the category model has read and create capabilities.
 
+Below is a diagram showcasing the relationship between the two tables
+
+![Img](./images/db_diagram.png)
+
 ### Frontend Setup
 
 The frontend is being managed in a separate repository, which uses React to display the To-do list app. 
