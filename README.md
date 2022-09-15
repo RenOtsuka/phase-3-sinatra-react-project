@@ -20,6 +20,10 @@ The frontend is being managed in a separate repository, which uses React to disp
 <br>
 [Frontend](https://github.com/RenOtsuka/phase-3-sinatra-react-project-frontend)
 
+## Installation Instructions
+
+- Make sure to have ruby installed on your PC (With Linux use `sudo apt install ruby-full`)
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
